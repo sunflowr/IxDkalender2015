@@ -19,6 +19,8 @@ float growth = 1;
 //Moon image
 PImage moon;
 
+// smoke variables 
+int m2 = millis();
 void setup()
 {
   size(1920, 1080);
