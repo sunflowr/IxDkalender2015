@@ -14,7 +14,7 @@ void fix() {
 }
 void mouse() {
   if (test == true) {
-    if (i>100) {
+    if (is>100) {
       bigger = -1;
       star(100, 920, _width, _height);
     } else {
@@ -24,6 +24,6 @@ void mouse() {
 }
 void star(int x, int y, int _width, int _height) {
   fill(255, 255, 0, 0+3*i);
-  ellipse(x+_width/2, y+_height/2, 10+i, 10+i);
-  i = i + bigger;
+  ellipse(x+_width/2, y+_height/2, 10+is, 10+is);
+  is = is + bigger;
 }
