@@ -12,6 +12,7 @@ int timer;
 int count = 0;
 int count2 = 0;
 boolean test = false;
+int bigger = 1;
 
 //snow variables
 float _starSize = 0;
@@ -42,11 +43,8 @@ void draw()
   tint(255, 150);
   noTint();
   santaWalking();
-<<<<<<< HEAD
-=======
   fix();
   mouse();
->>>>>>> refs/remotes/antonilund/master
   noStroke();
   
   
