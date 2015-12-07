@@ -13,6 +13,7 @@ int count = 0;
 int count2 = 0;
 boolean test = false;
 int bigger = 1;
+int is = 1;
 
 //snow variables
 float _starSize = 0;
