@@ -1,3 +1,10 @@
+boolean grid(int x, int y, int _width, int _height) {
+  if (mouseX>x && mouseY>y &&mouseX<x+_width && mouseY<y+_height) {
+    return true;
+  } else {
+    return false;
+  }
+}
 void fix() {
   if ( mousePressed == true) {
     if (grid(100, 920, _width, _height)) {
@@ -7,29 +14,16 @@ void fix() {
 }
 void mouse() {
   if (test == true) {
-    if (grid(100, 920, _width, _height)) {
-      doorOpen(100, 920, _width, _height);
+    if (i>100) {
+      bigger = -1;
+      star(100, 920, _width, _height);
+    } else {
+      star(100, 920, _width, _height);
     }
   }
 }
-boolean grid(int x, int y, int _width, int _height) {
-  if (mouseX>x && mouseY>y &&mouseX<x+_width && mouseY<y+_height) {
-    return true;
-  } else {
-    return false;
-  }
-}
-void doorOpen(int x, int y, int _width, int _height) {
-  for (int i = 0; i<10; i++) {
-    fill(255);
-    star(x, y, _width, _height - i*8);
-  }
-}
 void star(int x, int y, int _width, int _height) {
-  if (timer>time && count2<10) {
-    ellipse(x-5*count, y+_height-pow(count, 2), elThick, elThick);
-    time = timer + 5;
-    count++;
-    count2++;
-  }
+  fill(255, 255, 0, 0+3*i);
+  ellipse(x+_width/2, y+_height/2, 10+i, 10+i);
+  i = i + bigger;
 }
