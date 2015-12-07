@@ -2,7 +2,7 @@ void drawLantern(int x, int y, float lightStrength)
 {
   // Draw glow.
   fill(lightStrength * 255, lightStrength * 255, 0, 100);
-  ellipse(x+25, y+25, 75, 75);
+  ellipse(x+25, y+25, 30 + (lightStrength * 50), 30 + (lightStrength * 50));
 
   // Draw lantern
   fill(255, 0, 0);
@@ -32,7 +32,7 @@ void day8()
 {
   for(int i = 0; i < lanternsPosX.length; i++)
   {
-    drawLantern(lanternsPosX[i], lanternsPosY[i], lanternsStrength[i] + random(-0.05, 0.05));
+    drawLantern(lanternsPosX[i], lanternsPosY[i], lanternsStrength[i] + random(-0.03, 0.03));
     if(lanternsStrength[i] < 0.9)
     {
       lanternsStrength[i] += 0.02;
