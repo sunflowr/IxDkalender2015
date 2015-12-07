@@ -12,8 +12,6 @@ int timer;
 int count = 0;
 int count2 = 0;
 boolean test = false;
-int i = 0;
-int bigger = 1;
 
 //snow variables
 float _starSize = 0;
@@ -28,7 +26,7 @@ void setup()
   size(1920, 1080, P2D);
   backGroundImage = loadImage("background.png");
   santa = loadImage("santa.png");
-  moon = loadImage("moon.png");
+  moon =   loadImage("moon.png");
   for (int i = 0; i < _snow.length; i++)
   {
     _snow[i] = new Snow();
@@ -38,16 +36,17 @@ void draw()
 {
   timer = millis();
   image(backGroundImage, 0, 0, width, height);
+   moon();
+
   tint(255, 150);
-  image(moon, 600, -400, 700, 700);
   noTint();
   santaWalking();
   fix();
+  mouse();
   noStroke();
   _createStars();
   fill(255);
   rect(100, 920, _width, _height);
-  mouse();
   smooth();
   for (int i = 0; i < _snow.length; i++)
   {
