@@ -19,10 +19,12 @@ float growth = 1;
 //Moon image
 PImage moon;
 
+// smoke variables 
+int m2 = millis();
 void setup()
 {
   size(1920, 1080);
-  backGroundImage = loadImage("bakgrund.jpg");
+  backGroundImage = loadImage("background.png");
   santa = loadImage("santa.png");
   moon = loadImage("moon.png");
   for (int i = 0; i < _snow.length; i++)
