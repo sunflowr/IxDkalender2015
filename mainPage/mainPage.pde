@@ -11,13 +11,15 @@ int time = 0;
 int timer;
 int count = 0;
 int count2 = 0;
-boolean test = false;
+boolean test1 = false;
+boolean test2 = false;
 int bigger = 1;
 int is = 1;
 
 //snow variables
 float _starSize = 0;
 float growth = 1;
+boolean snowB = false;
 //Moon image
 PImage moon;
 
@@ -39,36 +41,55 @@ void draw()
   timer = millis();
   m2 = millis();
   image(backGroundImage, 0, 0, width, height);
-   moon();
+  moon();
 
   tint(255, 150);
   noTint();
   santaWalking();
-  fix();
-  mouse();
   noStroke();
-  
-  
+
+
   // Stjärnor
   _createStars();
-  
-  
+
+
   //Ellipse when door opens
-  fix();
-  fill(255);
-  rect(100, 920, _width, _height);
-  smooth();
+  if ( mousePressed == true) {
+    test1 = fix(100, 920, _width, _height);
+  }
+  if (test1==false) {
+    fill(255);
+    text("1", 140, 950);
+  } else if (test1 = true) {
+    mouse(100, 920, _width, _height);
+    smoke(70);
+    smoke2(30);
+    smoke3(10);
+    smoke4(40);
+  }
   
-  // Day 1 Snow
-  for (int i = 0; i < _snow.length; i++)
+  
+  if ( mousePressed == true) {
+    test2 = fix(250, 920, _width, _height);
+  }
+
+  if (test2==false) {
+    fill(255);
+    text("2", 300, 950);
+  } else if (test2 = true) {
+    mouse(300, 920, _width, _height);
+    snowB = true;
+  }
+  if(snowB == true){
+     for (int i = 0; i < _snow.length; i++)
   {
     _snow[i].circle();
+  } 
   }
- 
-  
+
+  smooth();
+
+  // Day 1 Snow
+
   // Dag 10 Smoke
-  smoke(70);
-  smoke2(30);
-  smoke3(10);
-  smoke4(40);
 }
