@@ -42,11 +42,8 @@ void draw()
   tint(255, 150);
   noTint();
   santaWalking();
-<<<<<<< HEAD
-=======
   fix();
   mouse();
->>>>>>> refs/remotes/antonilund/master
   noStroke();
   
   
