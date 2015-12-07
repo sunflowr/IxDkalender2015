@@ -22,7 +22,7 @@ float growth = 1;
 PImage moon;
 
 // smoke variables 
-int m2 = millis();
+int m2;
 void setup()
 {
   size(1920, 1080, P2D);
@@ -37,20 +37,36 @@ void setup()
 void draw()
 {
   timer = millis();
+  m2 = millis();
   image(backGroundImage, 0, 0, width, height);
   tint(255, 150);
   image(moon, 600, -400, 700, 700);
   noTint();
   santaWalking();
-  fix();
   noStroke();
+  
+  
+  // Stjärnor
   _createStars();
+  
+  
+  //Ellipse when door opens
+  fix();
   fill(255);
   rect(100, 920, _width, _height);
   mouse();
   smooth();
+  
+  // Day 1 Snow
   for (int i = 0; i < _snow.length; i++)
   {
     _snow[i].circle();
   }
+ 
+  
+  // Dag 10 Smoke
+  smoke(70);
+  smoke2(30);
+  smoke3(10);
+  smoke4(40);
 }
