@@ -25,8 +25,11 @@ PImage moon;
 
 // smoke variables 
 int m2;
+//snowman
 PImage snowman1;
 PImage snowman2;
+
+
 
 void setup()
 {
@@ -48,6 +51,8 @@ void draw()
   image(backGroundImage, 0, 0, width, height);
   moon();
   _drawSnowman();
+  
+  println(timer);
   tint(255, 150);
   noTint();
   santaWalking();
