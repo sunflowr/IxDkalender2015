@@ -3,7 +3,7 @@ boolean isDay17Open = true;
 
 PImage eyesOpenImage;
 PImage eyesClosedImage;
-int eyesPosX = 150; 
+int eyesPosX = 1800; 
 int eyesPosY = 800;
 
 // Initializes day 8 - only run once.
