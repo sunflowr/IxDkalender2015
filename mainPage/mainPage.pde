@@ -1,7 +1,8 @@
 PImage backGroundImage;
 int rainColor = 255;
 int numOfDrops = 100;
-Snow[] _snow = new Snow[numOfDrops];
+Snow[] _snow;
+boolean snowMore = false;
 
 //Door open variables
 int elThick = 5;
@@ -31,8 +32,25 @@ PImage snowman1;
 PImage snowman2;
 boolean showSnow = false;
 int iniSnow = timer;
-boolean open = false; //Open hatch or 
+boolean open = false; //Open hatch or
 
+// Mouse variables.
+boolean mouseIsClicked = false;
+
+boolean[] canOpenHatch = {
+  false, false, false, false, false, 
+  false, false, false, false, false, 
+  false, false, false, false, false, 
+  false, false, false, false, false, 
+  false, false, false, false
+};
+boolean[] hatchOpen = {
+  false, false, false, false, false, 
+  false, false, false, false, false, 
+  false, false, false, false, false, 
+  false, false, false, false, false, 
+  false, false, false, false
+};
 
 
 void setup()
@@ -43,10 +61,6 @@ void setup()
   moon =   loadImage("moon.png");
   snowman1 = loadImage("snowman1.2.png");
   snowman2 = loadImage("snowman2.1.png");
-  for (int i = 0; i < _snow.length; i++)
-  {
-    _snow[i] = new Snow();
-  }
   santawithreindeers = loadImage("santawithreindeers.png");
 }
 
@@ -58,7 +72,7 @@ void draw()
   image(backGroundImage, 0, 0, width, height);
   moon();
 
-  Date(); //Lägg ALLA luckor inom denna
+  Date(/*8*/); //Lägg ALLA luckor inom denna
   if (open == true) {
     println("OMG it's already");
     println(y+" "+m+" "+d); //insert function here
@@ -83,26 +97,64 @@ void draw()
   day3();
   day4();
 
-  smooth();
-}
-void mouseClicked()
-{
+  ////////////////////////////////////////////////
+  // Do hatches.
+  ////////////////////////////////////////////////
   //day 1
-  if (grid(250, 950, _width, _height) == true)
+  if (doHatch(1, 250, 950, _width, _height))
   {
+    numOfDrops = 10;
+    _snow = new Snow[numOfDrops];
+    for (int i = 0; i < _snow.length; i++)
+    {
+      _snow[i] = new Snow();
+    }
     snowB = true;
   }
 
   //day2
-  if (grid(100, 920, _width, _height)==true)
+  if (doHatch(2, 100, 920, _width, _height))
   {
     smoke1 = true;
   }
 
   //day 3
-  if (grid(100, 100, _width, _height) == true)
+  if (doHatch(3, 100, 100, _width, _height))
   {
     showSnow = true;
     iniSnow = timer;
   }
+  if (doHatch(4, 300, 500, _width, _height))
+  {
+    numOfDrops = 300;
+    _snow = new Snow[numOfDrops];
+    for (int i = 0; i < _snow.length; i++)
+    {
+      _snow[i] = new Snow();
+    }
+    snowMore = true;
+    snowB = false;
+  }
+
+  smooth();
+
+  // Reset mouse.
+  mouseIsClicked = false;
+}
+
+// Draw the hatch and check if mouse clicked on it.
+boolean doHatch(int hatchNumber, int x, int y, int _width, int _height)
+{
+  fill(255);
+  text(hatchNumber, x + (_width / 2), y + (_height / 2));
+  stroke(255);
+  noFill();
+  rect(x, y, _width, _height);
+  noStroke();
+  return mouseIsClicked && grid(x, y, _width, _height);
+}
+
+void mouseClicked()
+{
+  mouseIsClicked = true;
 }
