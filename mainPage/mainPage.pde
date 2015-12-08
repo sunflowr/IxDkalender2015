@@ -15,6 +15,7 @@ boolean test1 = false;
 boolean test2 = false;
 int bigger = 1;
 int is = 1;
+boolean smoke1 = false;
 
 //snow variables
 float _starSize = 0;
@@ -28,6 +29,8 @@ int m2;
 //snowman
 PImage snowman1;
 PImage snowman2;
+boolean showSnow = false;
+int iniSnow = timer;
 
 
 
@@ -50,7 +53,7 @@ void draw()
   m2 = millis();
   image(backGroundImage, 0, 0, width, height);
   moon();
-  _drawSnowman();
+  
   
   println(timer);
   tint(255, 150);
@@ -61,45 +64,32 @@ void draw()
 
   // Stjärnor
   _createStars();
-
-
-  //Ellipse when door opens
-  if ( mousePressed == true) {
-    test1 = fix(100, 920, _width, _height);
-  }
-  if (test1==false) {
-    fill(255);
-    text("1", 140, 950);
-  } else if (test1 = true) {
-    mouse(100, 920, _width, _height);
-    smoke(70);
-    smoke2(30);
-    smoke3(10);
-    smoke4(40);
-  }
+  //day 1
+  day1();
+  day2();
+  day3();
   
-  
-  if ( mousePressed == true) {
-    test2 = fix(250, 920, _width, _height);
-  }
-
-  if (test2==false) {
-    fill(255);
-    text("2", 300, 950);
-  } else if (test2 = true) {
-    mouse(300, 920, _width, _height);
-    snowB = true;
-  }
-  if(snowB == true){
-     for (int i = 0; i < _snow.length; i++)
-  {
-    _snow[i].circle();
-  } 
-  }
-
   smooth();
 
-  // Day 1 Snow
-
-  // Dag 10 Smoke
+}
+void mouseClicked()
+{
+ //day 1
+ if(grid(250, 950, _width, _height) == true)
+ {
+   snowB = true;
+ }
+ 
+ //day2
+ if(grid(100, 920, _width, _height)==true)
+ {
+  smoke1 = true; 
+ }
+ 
+  //day 3
+ if(grid(100, 100, _width, _height) == true)
+ {
+   showSnow = true;
+   iniSnow = timer;
+ }
 }

@@ -1,3 +1,4 @@
+
 //dag 3
 void day3()
 {
@@ -12,5 +13,5 @@ void day3()
     _drawSnowman();
    
   }
-  
+
 }

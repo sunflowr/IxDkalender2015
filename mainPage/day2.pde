@@ -1,3 +1,4 @@
+
 //dag 2
 void day2()
 {
@@ -15,4 +16,5 @@ void day2()
     smoke3(10);
     smoke4(40);
   }
+
 }
