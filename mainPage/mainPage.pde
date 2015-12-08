@@ -1,7 +1,8 @@
 PImage backGroundImage;
 int rainColor = 255;
 int numOfDrops = 100;
-Snow[] _snow = new Snow[numOfDrops];
+Snow[] _snow;
+boolean snowMore = false;
 
 //Door open variables
 int elThick = 5;
@@ -43,10 +44,6 @@ void setup()
   moon =   loadImage("moon.png");
   snowman1 = loadImage("snowman1.2.png");
   snowman2 = loadImage("snowman2.1.png");
-  for (int i = 0; i < _snow.length; i++)
-  {
-    _snow[i] = new Snow();
-  }
   santawithreindeers = loadImage("santawithreindeers.png");
 }
 
@@ -58,7 +55,7 @@ void draw()
   image(backGroundImage, 0, 0, width, height);
   moon();
 
-  Date(); //Lägg ALLA luckor inom denna
+  Date(/*8*/); //Lägg ALLA luckor inom denna
   if (open == true) {
     println("OMG it's already");
     println(y+" "+m+" "+d); //insert function here
@@ -90,6 +87,12 @@ void mouseClicked()
   //day 1
   if (grid(250, 950, _width, _height) == true)
   {
+    numOfDrops = 10;
+    _snow = new Snow[numOfDrops];
+    for (int i = 0; i < _snow.length; i++)
+    {
+      _snow[i] = new Snow();
+    }
     snowB = true;
   }
 
@@ -104,5 +107,16 @@ void mouseClicked()
   {
     showSnow = true;
     iniSnow = timer;
+  }
+  if (grid(300, 500, _width, _height) == true)
+  {
+    numOfDrops = 300;
+    _snow = new Snow[numOfDrops];
+    for (int i = 0; i < _snow.length; i++)
+    {
+      _snow[i] = new Snow();
+    }
+    snowMore = true;
+    snowB = false;
   }
 }
