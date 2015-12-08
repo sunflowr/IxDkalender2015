@@ -15,6 +15,7 @@ boolean test1 = false;
 boolean test2 = false;
 int bigger = 1;
 int is = 1;
+boolean smoke1 = false;
 
 //snow variables
 float _starSize = 0;
@@ -25,8 +26,14 @@ PImage moon;
 
 // smoke variables 
 int m2;
+//snowman
 PImage snowman1;
 PImage snowman2;
+boolean showSnow = false;
+int iniSnow = timer;
+boolean open = false; //Open hatch or 
+
+
 
 void setup()
 {
@@ -40,14 +47,28 @@ void setup()
   {
     _snow[i] = new Snow();
   }
+  santawithreindeers = loadImage("santawithreindeers.png");
 }
+
+
 void draw()
 {
   timer = millis();
   m2 = millis();
   image(backGroundImage, 0, 0, width, height);
   moon();
-  _drawSnowman();
+
+  Date(); //Lägg ALLA luckor inom denna
+  if (open == true) {
+    println("OMG it's already");
+    println(y+" "+m+" "+d); //insert function here
+    println("I gotta get some presents!!!");
+  } else {
+
+    text("Don't open this yet", 50, 50); //Nån kul effekt ifall man inte kan öppna den här luckan
+  }
+
+  println(timer);
   tint(255, 150);
   noTint();
   santaWalking();
@@ -56,45 +77,32 @@ void draw()
 
   // Stjärnor
   _createStars();
-
-
-  //Ellipse when door opens
-  if ( mousePressed == true) {
-    test1 = fix(100, 920, _width, _height);
-  }
-  if (test1==false) {
-    fill(255);
-    text("1", 140, 950);
-  } else if (test1 = true) {
-    mouse(100, 920, _width, _height);
-    smoke(70);
-    smoke2(30);
-    smoke3(10);
-    smoke4(40);
-  }
-  
-  
-  if ( mousePressed == true) {
-    test2 = fix(250, 920, _width, _height);
-  }
-
-  if (test2==false) {
-    fill(255);
-    text("2", 300, 950);
-  } else if (test2 = true) {
-    mouse(300, 920, _width, _height);
-    snowB = true;
-  }
-  if(snowB == true){
-     for (int i = 0; i < _snow.length; i++)
-  {
-    _snow[i].circle();
-  } 
-  }
+  //day 1
+  day1();
+  day2();
+  day3();
+  day4();
 
   smooth();
+}
+void mouseClicked()
+{
+  //day 1
+  if (grid(250, 950, _width, _height) == true)
+  {
+    snowB = true;
+  }
 
-  // Day 1 Snow
+  //day2
+  if (grid(100, 920, _width, _height)==true)
+  {
+    smoke1 = true;
+  }
 
-  // Dag 10 Smoke
+  //day 3
+  if (grid(100, 100, _width, _height) == true)
+  {
+    showSnow = true;
+    iniSnow = timer;
+  }
 }
