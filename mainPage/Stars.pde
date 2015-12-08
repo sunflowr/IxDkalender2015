@@ -1,13 +1,13 @@
 void _createStars()
 {
-  fill(0);
+  fill(255);
   
   ellipse(100, 50, _starSize, _starSize );
   ellipse(400, 10, _starSize, _starSize );
-  ellipse(600, 30, _starSize, _starSize );
+  ellipse(900, 30, _starSize, _starSize );
   ellipse(1800, 50, _starSize+ 3, _starSize + 3 );
-  ellipse(400, 10, _starSize, _starSize );
-  ellipse(600, 30, _starSize, _starSize );
+  ellipse(1200, 300, _starSize, _starSize+ 3 );
+  ellipse(1100, 100, _starSize, _starSize );
 
   if(_starSize < 5)
   {
