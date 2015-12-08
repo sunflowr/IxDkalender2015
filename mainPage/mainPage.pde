@@ -15,6 +15,7 @@ boolean test1 = false;
 boolean test2 = false;
 int bigger = 1;
 int is = 1;
+boolean smoke1 = false;
 
 //snow variables
 float _starSize = 0;
@@ -25,10 +26,14 @@ PImage moon;
 
 // smoke variables 
 int m2;
-
-boolean open = false; //Open hatch or 
+//snowman
 PImage snowman1;
 PImage snowman2;
+boolean showSnow = false;
+int iniSnow = timer;
+boolean open = false; //Open hatch or 
+
+
 
 void setup()
 {
@@ -63,63 +68,41 @@ void draw()
     text("Don't open this yet", 50, 50); //Nån kul effekt ifall man inte kan öppna den här luckan
   }
 
-  _drawSnowman();
-  
+  println(timer);
   tint(255, 150);
   noTint();
   santaWalking();
   noStroke();
 
-  day24();
-
-
 
   // Stjärnor
   _createStars();
+  //day 1
+  day1();
+  day2();
+  day3();
+  day4();
 
-
-  //Ellipse when door opens
-  
-  fix();
-  fill(255);
-  rect(100, 920, _width, _height);
   smooth();
-
-  // Day 1 Snow
-  for (int i = 0; i < _snow.length; i++)
-
-  if ( mousePressed == true) {
-    test1 = fix(100, 920, _width, _height);
-  }
-  if (test1==false) {
-    fill(255);
-    text("1", 140, 950);
-  } else if (test1 = true) {
-    mouse(100, 920, _width, _height);
-    smoke(70);
-    smoke2(30);
-    smoke3(10);
-    smoke4(40);
-  }
-  
-  
-  if ( mousePressed == true) {
-    test2 = fix(250, 920, _width, _height);
-  }
-
-  if (test2==false) {
-    fill(255);
-    text("2", 300, 950);
-  } else if (test2 = true) {
-    mouse(300, 920, _width, _height);
+}
+void mouseClicked()
+{
+  //day 1
+  if (grid(250, 950, _width, _height) == true)
+  {
     snowB = true;
   }
-  if(snowB == true){
-     for (int i = 0; i < _snow.length; i++)
+
+  //day2
+  if (grid(100, 920, _width, _height)==true)
   {
-    _snow[i].circle();
-  } 
+    smoke1 = true;
   }
 
-
+  //day 3
+  if (grid(100, 100, _width, _height) == true)
+  {
+    showSnow = true;
+    iniSnow = timer;
+  }
 }
