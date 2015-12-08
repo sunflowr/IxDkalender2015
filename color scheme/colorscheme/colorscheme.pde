@@ -9,7 +9,6 @@ ColorScheme cs2;
 ArrayList<Color> colors;
 ArrayList<Color> colors2;
 int[] cName;
-
 int counter = 0;
 
 void setup() {

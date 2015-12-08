@@ -9,7 +9,7 @@ void nameIt(ArrayList<Color> colors) {
   int x2pos = width-50;
   for (int i=0; i<colors.size(); i++) {
     colorList.append(colors.get(i).toInt());
-    c[i]= 
+    c[i]= cName[i];
     fill(colors.get(i).toInt());
     rect(40+i*20, 20, 20, 20);
     rect(x2pos-i*22, height-40, 20, 20);
