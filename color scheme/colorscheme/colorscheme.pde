@@ -1,10 +1,14 @@
-import jto.colorscheme.*;
+
+import jto.colorscheme.*; //importera biblioteket som funktionen bygger på
+//för att importera ett "library" gå till Sketch>> Import Library>> [välj ett bibliotek]
+//för att ladda hem nya bibliotek, välj Add Library i samma meny
 
 ColorScheme cs;
 ColorScheme cs2;
 
 ArrayList<Color> colors;
 ArrayList<Color> colors2;
+int[] cName;
 
 int counter = 0;
 
@@ -18,23 +22,30 @@ void setup() {
   colors = cs.getColors();
   colors2 = cs2.getColors();
   colors.addAll(colors2);
+  cName = new int[colors.size()];
+  cName= cs.toArray();
+
 
   frameRate(1);
 }
 
 void draw() {
-  // set the background to the current color
-  // notice the use of toInt() to convert it to
-  // an int (the same as processing's color type)
-  background(colors.get(counter).toInt());
-  fill(colors2.get(counter).toInt());
+  // toInt() gör om hex-färgen till en Int som Processing kan använda
+  background(100);
+  fill(colors.get(counter).toInt());
 
-  rect(100, 100, width/2, height/2);
 
-  // update the counter
+  rect(width/2-50, height/2-50, 100, 100);
+  text("color"+counter, width/2-50, height/2-100, 200, 200);
+
+  // räknare som stannar när den gått upp till antal färger
   counter = (counter + 1) % colors.size();
-  println(colors.size());
-  
-  nameIt(colors);
+  if (counter>colors.size()) {
+    counter=0;
+  }
 
+  println("Box:");
+  println(colors.get(counter));
+  println(colors.get(counter).toInt());
+  nameIt(colors); //Metoden på nästa flik
 }

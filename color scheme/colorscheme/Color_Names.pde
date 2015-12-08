@@ -1,34 +1,20 @@
-color color1;
-color color2;
-color color3;
-color color4;
-color color5;
-color color6;
-color color7;
-color color8;
-color color9;
-color color10;
-color color11;
-color color12;
-color color13;
-color color14;
-color color15;
-color color16;
-color color17;
-color color18;
-color color19;
-color color20;
+color[] c= new color[colors.size()];
+
+IntList colorList;
 
 
-void nameIt(ArrayList<Color> colors3){
-
-  for(int i=1; i<colors3.size(); i++){
-   color1 = (colors3.get(i).toInt());
-    fill(colors3.get(i).toInt());
-    rect(50+i*50, 20, 20, 20);
-        text("color: "+i,50+i*50, 20, 20, 20);
-
+void nameIt(ArrayList<Color> colors) {
+  colorList = new IntList();
+  int count=0;
+  int x2pos = width-50;
+  for (int i=0; i<colors.size(); i++) {
+    colorList.append(colors.get(i).toInt());
+    c[i]= 
+    fill(colors.get(i).toInt());
+    rect(40+i*20, 20, 20, 20);
+    rect(x2pos-i*22, height-40, 20, 20);
+    //text("color number: "+i, 40+i*20, 20, 20, 20);
   }
-  
-  
+  count=count+1;
+  print(colorList.get(count));
 }
