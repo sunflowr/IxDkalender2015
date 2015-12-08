@@ -25,12 +25,17 @@ PImage moon;
 
 // smoke variables 
 int m2;
+PImage snowman1;
+PImage snowman2;
+
 void setup()
 {
   size(1920, 1080, P2D);
   backGroundImage = loadImage("background.png");
   santa = loadImage("santa.png");
   moon =   loadImage("moon.png");
+  snowman1 = loadImage("snowman1.2.png");
+  snowman2 = loadImage("snowman2.1.png");
   for (int i = 0; i < _snow.length; i++)
   {
     _snow[i] = new Snow();
@@ -42,7 +47,7 @@ void draw()
   m2 = millis();
   image(backGroundImage, 0, 0, width, height);
   moon();
-
+  _drawSnowman();
   tint(255, 150);
   noTint();
   santaWalking();
