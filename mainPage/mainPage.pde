@@ -31,6 +31,7 @@ PImage snowman1;
 PImage snowman2;
 boolean showSnow = false;
 int iniSnow = timer;
+boolean open = false; //Open hatch or 
 
 
 
@@ -46,15 +47,27 @@ void setup()
   {
     _snow[i] = new Snow();
   }
+  santawithreindeers = loadImage("santawithreindeers.png");
 }
+
+
 void draw()
 {
   timer = millis();
   m2 = millis();
   image(backGroundImage, 0, 0, width, height);
   moon();
-  
-  
+
+  Date(); //Lägg ALLA luckor inom denna
+  if (open == true) {
+    println("OMG it's already");
+    println(y+" "+m+" "+d); //insert function here
+    println("I gotta get some presents!!!");
+  } else {
+
+    text("Don't open this yet", 50, 50); //Nån kul effekt ifall man inte kan öppna den här luckan
+  }
+
   println(timer);
   tint(255, 150);
   noTint();
@@ -69,28 +82,27 @@ void draw()
   day2();
   day3();
   day4();
-  
-  smooth();
 
+  smooth();
 }
 void mouseClicked()
 {
- //day 1
- if(grid(250, 950, _width, _height) == true)
- {
-   snowB = true;
- }
- 
- //day2
- if(grid(100, 920, _width, _height)==true)
- {
-  smoke1 = true; 
- }
- 
+  //day 1
+  if (grid(250, 950, _width, _height) == true)
+  {
+    snowB = true;
+  }
+
+  //day2
+  if (grid(100, 920, _width, _height)==true)
+  {
+    smoke1 = true;
+  }
+
   //day 3
- if(grid(100, 100, _width, _height) == true)
- {
-   showSnow = true;
-   iniSnow = timer;
- }
+  if (grid(100, 100, _width, _height) == true)
+  {
+    showSnow = true;
+    iniSnow = timer;
+  }
 }
