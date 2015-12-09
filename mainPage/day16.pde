@@ -6,8 +6,8 @@ void santaWalking() {
     image(santa,xPosSanta,yPosSanta,200,200);
     xPosSanta = xPosSanta-2;
     yPosSanta = yPosSanta-1;
-    if(xPosSanta < 100){
-      xPosSanta = 100;
+    if(xPosSanta < 850){
+      xPosSanta = 850;
       yPosSanta = 875;
     }
     if(yPosSanta < 870) {
