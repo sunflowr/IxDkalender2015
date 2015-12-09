@@ -22,7 +22,7 @@ void day17()
     isDay17Initialized = true;
   }
   
-  if(isHatchOpen(17))
+  if(isHatchOpen(17) && (!isHatchOpen(18)))
   {
     // Draw eyes.
     // Blink the eyes every 5th second.
