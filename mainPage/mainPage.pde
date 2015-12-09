@@ -34,6 +34,11 @@ boolean showSnow = false;
 int iniSnow = timer;
 boolean open = false; //Open hatch or
 
+boolean treeDec = false;
+boolean houseDec = false;
+PImage treeDecorImg;
+PImage houseLightsImg;
+
 // Mouse variables.
 boolean mouseIsClicked = false;
 
@@ -62,6 +67,8 @@ void setup()
   snowman1 = loadImage("snowman1.2.png");
   snowman2 = loadImage("snowman2.1.png");
   santawithreindeers = loadImage("santawithreindeers.png");
+  treeDecorImg = loadImage("treeDecor.png");
+  houseLightsImg = loadImage("House-lights.png");
 }
 
 
@@ -100,8 +107,18 @@ void draw()
   day6();
   day7();
   day8();
-  day9();
-  day10();
+  if(isHatchOpen(9))
+  {
+    treeDec = true;
+    image(treeDecorImg, 400, 800, 148, 248);
+    day9();
+  }
+  if(isHatchOpen(9))
+  {
+    houseDec = true;
+    image(houseLightsImg, 600, 800, 281, 126);
+    day10();
+  }
   day11();
   day12();
   day13();
@@ -155,6 +172,26 @@ void draw()
     snowMore = true;
     snowB = false;
   }
+  doHatch(5, 300, 500, _width, _height);
+  doHatch(6, 400, 500, _width, _height);
+  doHatch(7, 500, 500, _width, _height);
+  doHatch(8, 600, 500, _width, _height);
+  doHatch(9, 700, 500, _width, _height);
+  doHatch(10, 800, 500, _width, _height);
+  doHatch(11, 900, 500, _width, _height);
+  doHatch(12, 1000, 500, _width, _height);
+  doHatch(13, 1100, 500, _width, _height);
+  doHatch(14, 1200, 500, _width, _height);
+  doHatch(15, 1300, 500, _width, _height);
+  doHatch(16, 1400, 500, _width, _height);
+  doHatch(17, 1500, 500, _width, _height);
+  doHatch(18, 1600, 500, _width, _height);
+  doHatch(19, 1700, 500, _width, _height);
+  doHatch(20, 1800, 500, _width, _height);
+  doHatch(21, 300, 600, _width, _height);
+  doHatch(22, 400, 600, _width, _height);
+  doHatch(23, 500, 600, _width, _height);
+  doHatch(24, 600, 600, _width, _height);
 
   smooth();
 
@@ -171,7 +208,7 @@ boolean doHatch(int hatchNumber, int x, int y, int _width, int _height)
   noFill();
   rect(x, y, _width, _height);
   noStroke();
-  boolean openHatch = canOpenHatch[hatchNumber - 1] && mouseIsClicked && grid(x, y, _width, _height); 
+  boolean openHatch = /*canOpenHatch[hatchNumber - 1] &&*/ mouseIsClicked && grid(x, y, _width, _height); 
   if(openHatch)
   {
     hatchOpen[hatchNumber - 1] = true;
