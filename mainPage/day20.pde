@@ -8,20 +8,16 @@ float trans = 0;
 //en stjärna faller
 void day20() {
 
-
   fill(255);
   trans += 0.5;
   float d = dist(x, y, endX, endY);
   if (d > 1.0) {
     x += (endX - x) * easing*2;
     y += (endY - y) * easing;
-  
-
-   
   }
-    fill(0, 12);
+    noStroke();
+    fill(0, 5);
     rect(0, 0, width, height);
     fill(255);
-    noStroke();
-    ellipse(x, y, 15, 15);
+    ellipse(x, y, 17, 15);
 }

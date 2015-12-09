@@ -76,8 +76,9 @@ boolean[] hatchOpen = {
 
 void setup()
 {
-//  size(1920, 1080, P2D);
-  size(1080, 720, P2D);
+
+ size(1920, 1080, P2D);
+ // size(1080, 720, P2D);
   skier = loadImage("skid-tomte.png");
   backGroundImage = loadImage("background.png");
   santa = loadImage("santa.png");
@@ -113,17 +114,20 @@ void setup()
 
 void draw()
 {
-  
   timer = millis();
   m2 = millis();
  
-
-      day20();
-  tint(255, 150);
-    image(sky, 0, 0, width, height );
+if(d>20) //Detta är för lucka 20. Den måste ligga här för att ritas i bakgrunden.
+{
+    day20();
+    if(d>5)
+{
+    tint(255, 200);
+   image(sky, 0, 0, width, 600);
     noTint();
-          day20();
-
+}
+     day20();
+}
   image(backGroundImage, 0, 0, width, height);
   day3();
   day11();
