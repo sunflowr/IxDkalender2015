@@ -6,6 +6,9 @@ int numOfDrops = 100;
 Snow[] _snow;
 boolean snowMore = false;
 
+import processing.sound.*;
+SoundFile christmasSound;
+
 //Door open variables
 int elThick = 5;
 int _width = 75;
@@ -92,10 +95,15 @@ void setup()
   snow = loadImage("snow.png");
   initSparkelsAndMagic();
   
+  //christmasSound = new SoundFile(this, "firstnoel.mp3");
+  //christmasSound.play();
+  
+  
   if(doAttractionMode)
   {
      d = 1;
   }
+   d=24;
 }
 
 
