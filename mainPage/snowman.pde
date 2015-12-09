@@ -5,7 +5,7 @@ void _drawSnowman()
   {
 
   fill(255);
- stroke(1);
+ stroke(2);
  ellipse(1220, 640, 80, 80);
  noStroke();
   }
