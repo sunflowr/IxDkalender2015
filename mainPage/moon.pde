@@ -1,4 +1,4 @@
-  int i = 1;
+
 
 void moon() {
   //i++;
