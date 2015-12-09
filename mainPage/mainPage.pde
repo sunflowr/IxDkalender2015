@@ -1,4 +1,6 @@
 PImage backGroundImage;
+PImage sky;
+
 int rainColor = 255;
 int numOfDrops = 100;
 Snow[] _snow;
@@ -67,6 +69,7 @@ void setup()
 {
   size(1920, 1080, P2D);
   backGroundImage = loadImage("background.png");
+  sky = loadImage("starfield.jpg");
   santa = loadImage("santa.png");
   moon =   loadImage("moon.png");
   halfMoon = loadImage("halfMoon.png");
@@ -91,6 +94,11 @@ void draw()
 {
   timer = millis();
   m2 = millis();
+  
+  if(d>=5 && isHatchOpen(5) == true){
+    tint(255, 20);
+      image(sky, 0, 0, width, height);
+    }
   image(backGroundImage, 0, 0, width, height);
    day3();
    day11();
@@ -99,11 +107,10 @@ void draw()
   }
   
 
-  Date(/*8*/); //Lägg ALLA luckor inom denna
+  Date(d); 
   if (open == true) {
-    println("OMG it's already");
-    println(y+" "+m+" "+d); //insert function here
-    println("I gotta get some presents!!!");
+    println("Todays Date");
+    println(ye+" "+mo+" "+d);
   } else {
 
     text("Don't open this yet", 50, 50); //Nån kul effekt ifall man inte kan öppna den här luckan
@@ -153,7 +160,10 @@ void draw()
   day17();
   day18();
   day19();
+ if(isHatchOpen(10))
+  {
   day20();
+  }
   day21();
   day22();
   
@@ -236,8 +246,6 @@ void draw()
   
   updateSparkelsAndMagic();
   drawSparkelsAndMagic();
-
-  smooth();
 
   // Reset mouse.
   mouseIsClicked = false;
