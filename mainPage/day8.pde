@@ -2,10 +2,13 @@ boolean isDay8Initialized = false;
 
 PImage lanternImage;
 int lanternsPosX[] = {
-  140, 600, 1300
+  160, 600, 1300
 };
 int lanternsPosY[] = {
-  160, 300, 400
+  380, 300, 400
+};
+float lanternsSize[] = {
+  0.5, 1, 1
 };
 float lanternsRotation[] = {
   0.0, -0.1, 0.2
@@ -15,7 +18,7 @@ float lanternsStrength[] = {
 };
 
 // Draw a single lantern.
-void drawLantern(int x, int y, float rotation, float lightStrength)
+void drawLantern(int x, int y, float size, float rotation, float lightStrength)
 {
   int fireCenterX = 87;
   int fireCenterY = 100;
@@ -25,6 +28,7 @@ void drawLantern(int x, int y, float rotation, float lightStrength)
 
   translate(x, y);
   rotate(rotation);
+  scale(size);
 
   // Draw lantern.
   image(lanternImage, 0, 0);
@@ -77,6 +81,6 @@ void day8()
     }
 
     // Draw the lantern.
-    drawLantern(lanternsPosX[i], lanternsPosY[i], lanternsRotation[i], lanternStrength);
+    drawLantern(lanternsPosX[i], lanternsPosY[i], lanternsSize[i], lanternsRotation[i], lanternStrength);
   }
 }
