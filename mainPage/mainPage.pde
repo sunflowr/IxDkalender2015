@@ -1,4 +1,4 @@
-boolean doAttractionMode = true;
+boolean doAttractionMode = false;
 
 PImage backGroundImage;
 int rainColor = 255;
@@ -288,7 +288,7 @@ boolean doHatch(int hatchNumber, int x, int y, int _width, int _height)
   noFill();
   rect(x, y, _width, _height);
   noStroke();
-  boolean openHatch = canOpenHatch[hatchNumber - 1] && mouseIsClicked && grid(x, y, _width, _height); 
+  boolean openHatch = canOpenHatch[hatchNumber - 1] && (doAttractionMode || (mouseIsClicked && grid(x, y, _width, _height))); 
   if (openHatch)
   {
     createSparkelsAndMagic(x + (_width / 2), y + (_height / 2), 50);
