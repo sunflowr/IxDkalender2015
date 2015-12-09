@@ -35,6 +35,8 @@ boolean showSnow = false;
 int iniSnow = timer;
 boolean open = false; //Open hatch or
 
+PImage snow;
+
 boolean treeDec = false;
 boolean houseDec = false;
 boolean roofy = false;
@@ -80,6 +82,7 @@ void setup()
   lucia = loadImage("luciacrowd.png");
   santa2 = loadImage("santa2.png");
   renar = loadImage("renar.png");
+  snow = loadImage("snow.png");
   initSparkelsAndMagic();
 }
 
@@ -115,6 +118,7 @@ void draw()
   // Stjärnor
   _createStars();
   //day 1
+  day6();
   day1();
   day2();
  
@@ -122,23 +126,22 @@ void draw()
   if(isHatchOpen(5))
   {
     roofy = true;
-    image(roofSnow,893,277,294,174);
+    image(roofSnow,895,290,294,174);
     day5();
   }
   day5();
-  day6();
   day7();
   day8();
   if(isHatchOpen(9))
   {
     treeDec = true;
-    image(treeDecorImg, 555, 500, 148, 248);
+    image(treeDecorImg, 555, 507, 148, 248);
     day9();
   }
   if(isHatchOpen(10))
   {
     houseDec = true;
-    image(houseLightsImg, 903, 345, 281, 126);
+    image(houseLightsImg, 903, 352, 281, 126);
     day10();
   }
   
@@ -146,7 +149,7 @@ void draw()
   day13();
   day14();
   day15();
-  day16(); //day16
+  day16();
   day17();
   day18();
   day19();
