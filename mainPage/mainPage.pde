@@ -100,7 +100,7 @@ void draw()
   }
   
 
-  Date(/*8*/); //Lägg ALLA luckor inom denna
+  //Date(/*8*/); //Lägg ALLA luckor inom denna
   if (open == true) {
     println("OMG it's already");
     println(y+" "+m+" "+d); //insert function here
@@ -209,7 +209,18 @@ void draw()
   }
   doHatch(5, 300, 500, _width, _height);
   doHatch(6, 400, 500, _width, _height);
-  doHatch(7, 500, 500, _width, _height);
+  if(doHatch(7, 500, 500, _width, _height))
+  {
+    numOfDrops = 300;
+    _snow = new Snow[numOfDrops];
+    for (int i = 0; i < _snow.length; i++)
+    {
+      _snow[i] = new Snow();
+    }
+    snowMore = true;
+    snowB = false;
+    
+  }
   doHatch(8, 600, 500, _width, _height);
   doHatch(9, 700, 500, _width, _height);
   doHatch(10, 800, 500, _width, _height);
