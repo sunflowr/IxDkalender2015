@@ -77,6 +77,8 @@ void setup()
   polarbear = loadImage("polarbearwalk.png");
   bloodsplatter = loadImage("bloodsplatter.png");
   godjul = loadImage("godjul.png");
+  lucia = loadImage("luciacrowd.png");
+  santa2 = loadImage("santa2.png");
 }
 
 
@@ -137,7 +139,7 @@ void draw()
   day13();
   day14();
   day15();
-  santaWalking(); //day16
+  day16(); //day16
   day17();
   day18();
   day19();
