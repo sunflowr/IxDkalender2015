@@ -3,7 +3,7 @@ void _createStars()
   fill(255);
   
   ellipse(100, 50, _starSize, _starSize );
-  ellipse(400, 10, _starSize, _starSize );
+  ellipse(700, 10, _starSize, _starSize );
   ellipse(900, 30, _starSize, _starSize );
   ellipse(1800, 50, _starSize+ 3, _starSize + 3 );
   ellipse(1200, 300, _starSize, _starSize+ 3 );

@@ -1,15 +1,11 @@
 PImage santa;
-int xPosSanta = 1800;
+int xPosSanta = -200;
 int yPosSanta = 875;
 
-void santaWalking() {
+void day16() {
     image(santa,xPosSanta,yPosSanta,200,200);
-    xPosSanta = xPosSanta-2;
+    xPosSanta = xPosSanta+2;
     yPosSanta = yPosSanta-1;
-    if(xPosSanta < 100){
-      xPosSanta = 100;
-      yPosSanta = 875;
-    }
     if(yPosSanta < 870) {
       yPosSanta = yPosSanta+15;
     } 
