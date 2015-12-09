@@ -11,7 +11,7 @@ void day19() {
     if(yPosBear < 670) {
       yPosBear = yPosBear+15;
     }
-    if(xPosBear <= 850) {
+    if(xPosBear <= 850 && xPosBear>-700) {
       image(bloodsplatter,800, 800 ,300,278);
     }
     
