@@ -66,6 +66,7 @@ boolean[] hatchOpen = {
 void setup()
 {
   size(1920, 1080, P2D);
+  skier = loadImage("skid-tomte.png");
   backGroundImage = loadImage("background.png");
   santa = loadImage("santa.png");
   moon =   loadImage("moon.png");
