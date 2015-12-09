@@ -152,17 +152,6 @@ void draw()
   //day2
   if (doHatch(2, 100, 920, _width, _height))
   {
-    smoke1 = true;
-  }
-
-  //day 3
-  if (doHatch(3, 100, 100, _width, _height))
-  {
-    showSnow = true;
-    iniSnow = timer;
-  }
-  if (doHatch(4, 300, 500, _width, _height))
-  {
     numOfDrops = 300;
     _snow = new Snow[numOfDrops];
     for (int i = 0; i < _snow.length; i++)
@@ -171,6 +160,23 @@ void draw()
     }
     snowMore = true;
     snowB = false;
+    
+  }
+
+  //day 3
+  if (doHatch(3, 100, 100, _width, _height))
+  {
+    
+  }
+  if (doHatch(4, 300, 500, _width, _height))
+  {
+    numOfDrops = 10;
+    _snow = new Snow[numOfDrops];
+    for (int i = 0; i < _snow.length; i++)
+    {
+      _snow[i] = new Snow();
+    }
+    snowB = true;
   }
   doHatch(5, 300, 500, _width, _height);
   doHatch(6, 400, 500, _width, _height);
@@ -179,9 +185,16 @@ void draw()
   doHatch(9, 700, 500, _width, _height);
   doHatch(10, 800, 500, _width, _height);
   doHatch(11, 900, 500, _width, _height);
-  doHatch(12, 1000, 500, _width, _height);
+  if (doHatch(12, 1000, 500, _width, _height))
+  {
+    showSnow = true;
+    iniSnow = timer;
+  }
   doHatch(13, 1100, 500, _width, _height);
-  doHatch(14, 1200, 500, _width, _height);
+  if(doHatch(14, 1200, 500, _width, _height))
+  {
+    smoke1 = true;
+  }
   doHatch(15, 1300, 500, _width, _height);
   doHatch(16, 1400, 500, _width, _height);
   doHatch(17, 1500, 500, _width, _height);
