@@ -1,5 +1,4 @@
 boolean isDay17Initialized = false;
-boolean isDay17Open = true;
 
 PImage eyesOpenImage;
 PImage eyesClosedImage;
@@ -23,7 +22,7 @@ void day17()
     isDay17Initialized = true;
   }
   
-  if(isDay17Open)
+  if(isHatchOpen(17))
   {
     // Draw eyes.
     // Blink the eyes every 5th second.

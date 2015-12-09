@@ -69,6 +69,9 @@ void setup()
   santawithreindeers = loadImage("santawithreindeers.png");
   treeDecorImg = loadImage("treeDecor.png");
   houseLightsImg = loadImage("House-lights.png");
+  polarbear = loadImage("polarbearwalk.png");
+  bloodsplatter = loadImage("bloodsplatter.png");
+  godjul = loadImage("godjul.png");
 }
 
 
@@ -92,7 +95,6 @@ void draw()
   println(timer);
   tint(255, 150);
   noTint();
-  santaWalking();
   noStroke();
 
 
@@ -124,7 +126,7 @@ void draw()
   day13();
   day14();
   day15();
-  santaWalking(); //day16();
+  santaWalking(); //day16
   day17();
   day18();
   day19();
@@ -132,7 +134,10 @@ void draw()
   day21();
   day22();
   day23();
-  //day24();
+  if(isHatchOpen(24))
+  {
+    day24();
+  }
 
   ////////////////////////////////////////////////
   // Do hatches.
