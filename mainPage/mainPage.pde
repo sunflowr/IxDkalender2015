@@ -79,6 +79,7 @@ void setup()
   godjul = loadImage("godjul.png");
   lucia = loadImage("luciacrowd.png");
   santa2 = loadImage("santa2.png");
+  renar = loadImage("renar.png");
 }
 
 
