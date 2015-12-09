@@ -1,3 +1,5 @@
+boolean doAttractionMode = true;
+
 PImage backGroundImage;
 int rainColor = 255;
 int numOfDrops = 100;
@@ -44,6 +46,10 @@ PImage treeDecorImg;
 PImage houseLightsImg;
 PImage roofSnow;
 
+// Attraction mode variables.
+boolean attractionMode = true;
+int attractionTimer = 0;
+
 // Mouse variables.
 boolean mouseIsClicked = false;
 
@@ -85,6 +91,11 @@ void setup()
   renar = loadImage("renar.png");
   snow = loadImage("snow.png");
   initSparkelsAndMagic();
+  
+  if(doAttractionMode)
+  {
+     d = 1;
+  }
 }
 
 
@@ -93,24 +104,34 @@ void draw()
   timer = millis();
   m2 = millis();
   image(backGroundImage, 0, 0, width, height);
-   day3();
-   day11();
-   if(isHatchOpen(23)){
+  day3();
+  day11();
+  if (isHatchOpen(23)) {
     day23();
   }
-  
 
-  //Date(/*8*/); //Lägg ALLA luckor inom denna
-  if (open == true) {
-    println("OMG it's already");
-    println(y+" "+m+" "+d); //insert function here
-    println("I gotta get some presents!!!");
-  } else {
+  // Attraction mode - enable a day every 10min.
+  if (doAttractionMode)
+  {
+    if ((millis() > (attractionTimer + (10 * 60 * 1000))) && (d < 24))
+    {
+      // Update attraction timer.
+      attractionTimer = millis();
 
-    text("Don't open this yet", 50, 50); //Nån kul effekt ifall man inte kan öppna den här luckan
+      // Update day.
+      d++;
+      println("day: " + d);
+    }
   }
 
-  println(timer);
+  for (int i = 0; i < 24; i++)
+  {
+    Date(i + 1); //Lägg ALLA luckor inom denna
+    if (open == true) {
+      canOpenHatch[i] = true;
+    }
+  }
+
   tint(255, 150);
   noTint();
   noStroke();
@@ -122,30 +143,30 @@ void draw()
   day6();
   day1();
   day2();
- 
+
   day4();
-  if(isHatchOpen(5))
+  if (isHatchOpen(5))
   {
     roofy = true;
-    image(roofSnow,895,290,294,174);
+    image(roofSnow, 895, 290, 294, 174);
     day5();
   }
   day5();
   day7();
   day8();
-  if(isHatchOpen(9))
+  if (isHatchOpen(9))
   {
     treeDec = true;
     image(treeDecorImg, 555, 507, 148, 248);
     day9();
   }
-  if(isHatchOpen(10))
+  if (isHatchOpen(10))
   {
     houseDec = true;
     image(houseLightsImg, 903, 352, 281, 126);
     day10();
   }
-  
+
   day12();
   day13();
   day14();
@@ -157,8 +178,8 @@ void draw()
   day20();
   day21();
   day22();
-  
-  if(isHatchOpen(24))
+
+  if (isHatchOpen(24))
   {
     day24();
   }
@@ -189,13 +210,11 @@ void draw()
     }
     snowMore = true;
     snowB = false;
-    
   }
 
   //day 3
   if (doHatch(3, 500, 100, _width, _height))
   {
-    
   }
   if (doHatch(4, 700, 100, _width, _height))
   {
@@ -209,7 +228,7 @@ void draw()
   }
   doHatch(5, 900, 100, _width, _height);
   doHatch(6, 1100, 100, _width, _height);
-  if(doHatch(7, 1300, 100, _width, _height))
+  if (doHatch(7, 1300, 100, _width, _height))
   {
     numOfDrops = 300;
     _snow = new Snow[numOfDrops];
@@ -219,7 +238,6 @@ void draw()
     }
     snowMore = true;
     snowB = false;
-    
   }
   doHatch(8, 1500, 100, _width, _height);
   doHatch(9, 1700, 100, _width, _height);
@@ -231,7 +249,7 @@ void draw()
     iniSnow = timer;
   }
   doHatch(13, 700, 200, _width, _height);
-  if(doHatch(14, 900, 200, _width, _height))
+  if (doHatch(14, 900, 200, _width, _height))
   {
     smoke1 = true;
   }
@@ -245,7 +263,7 @@ void draw()
   doHatch(22, 1100, 300, _width, _height);
   doHatch(23, 1300, 300, _width, _height);
   doHatch(24, 900, 400, _width, _height);
-  
+
   updateSparkelsAndMagic();
   drawSparkelsAndMagic();
 
@@ -259,7 +277,7 @@ void draw()
 boolean doHatch(int hatchNumber, int x, int y, int _width, int _height)
 {
   // If hatch is open hide hatch.
-  if(hatchOpen[hatchNumber - 1])
+  if (hatchOpen[hatchNumber - 1])
   {
     return false;
   }
@@ -270,8 +288,8 @@ boolean doHatch(int hatchNumber, int x, int y, int _width, int _height)
   noFill();
   rect(x, y, _width, _height);
   noStroke();
-  boolean openHatch = /*canOpenHatch[hatchNumber - 1] &&*/ mouseIsClicked && grid(x, y, _width, _height); 
-  if(openHatch)
+  boolean openHatch = canOpenHatch[hatchNumber - 1] && mouseIsClicked && grid(x, y, _width, _height); 
+  if (openHatch)
   {
     createSparkelsAndMagic(x + (_width / 2), y + (_height / 2), 50);
     hatchOpen[hatchNumber - 1] = true;
