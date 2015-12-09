@@ -35,6 +35,8 @@ boolean showSnow = false;
 int iniSnow = timer;
 boolean open = false; //Open hatch or
 
+PImage snow;
+
 boolean treeDec = false;
 boolean houseDec = false;
 boolean roofy = false;
@@ -80,6 +82,7 @@ void setup()
   lucia = loadImage("luciacrowd.png");
   santa2 = loadImage("santa2.png");
   renar = loadImage("renar.png");
+  snow = loadImage("snow.png");
   initSparkelsAndMagic();
 }
 
@@ -146,7 +149,7 @@ void draw()
   day13();
   day14();
   day15();
-  day16(); //day16
+  day16();
   day17();
   day18();
   day19();
