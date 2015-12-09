@@ -118,7 +118,7 @@ void draw()
   // Stjärnor
   _createStars();
   //day 1
-  day20();
+  day6();
   day1();
   day2();
  
@@ -130,19 +130,18 @@ void draw()
     day5();
   }
   day5();
-  day6();
   day7();
   day8();
   if(isHatchOpen(9))
   {
     treeDec = true;
-    image(treeDecorImg, 555, 500, 148, 248);
+    image(treeDecorImg, 555, 507, 148, 248);
     day9();
   }
   if(isHatchOpen(10))
   {
     houseDec = true;
-    image(houseLightsImg, 903, 345, 281, 126);
+    image(houseLightsImg, 903, 352, 281, 126);
     day10();
   }
   
@@ -154,6 +153,7 @@ void draw()
   day17();
   day18();
   day19();
+  day20();
   day21();
   day22();
   
