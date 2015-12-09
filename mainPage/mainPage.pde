@@ -167,7 +167,7 @@ void draw()
   // Do hatches.
   ////////////////////////////////////////////////
   //day 1
-  if (doHatch(1, 250, 950, _width, _height))
+  if (doHatch(1, 100, 100, _width, _height))
   {
     numOfDrops = 10;
     _snow = new Snow[numOfDrops];
@@ -179,7 +179,7 @@ void draw()
   }
 
   //day2
-  if (doHatch(2, 100, 920, _width, _height))
+  if (doHatch(2, 300, 100, _width, _height))
   {
     numOfDrops = 300;
     _snow = new Snow[numOfDrops];
@@ -193,11 +193,11 @@ void draw()
   }
 
   //day 3
-  if (doHatch(3, 100, 100, _width, _height))
+  if (doHatch(3, 500, 100, _width, _height))
   {
     
   }
-  if (doHatch(4, 300, 500, _width, _height))
+  if (doHatch(4, 700, 100, _width, _height))
   {
     numOfDrops = 10;
     _snow = new Snow[numOfDrops];
@@ -207,9 +207,9 @@ void draw()
     }
     snowB = true;
   }
-  doHatch(5, 300, 500, _width, _height);
-  doHatch(6, 400, 500, _width, _height);
-  if(doHatch(7, 500, 500, _width, _height))
+  doHatch(5, 900, 100, _width, _height);
+  doHatch(6, 1100, 100, _width, _height);
+  if(doHatch(7, 1300, 100, _width, _height))
   {
     numOfDrops = 300;
     _snow = new Snow[numOfDrops];
@@ -221,30 +221,30 @@ void draw()
     snowB = false;
     
   }
-  doHatch(8, 600, 500, _width, _height);
-  doHatch(9, 700, 500, _width, _height);
-  doHatch(10, 800, 500, _width, _height);
-  doHatch(11, 900, 500, _width, _height);
-  if (doHatch(12, 1000, 500, _width, _height))
+  doHatch(8, 1500, 100, _width, _height);
+  doHatch(9, 1700, 100, _width, _height);
+  doHatch(10, 100, 200, _width, _height);
+  doHatch(11, 300, 200, _width, _height);
+  if (doHatch(12, 500, 200, _width, _height))
   {
     showSnow = true;
     iniSnow = timer;
   }
-  doHatch(13, 1100, 500, _width, _height);
-  if(doHatch(14, 1200, 500, _width, _height))
+  doHatch(13, 700, 200, _width, _height);
+  if(doHatch(14, 900, 200, _width, _height))
   {
     smoke1 = true;
   }
-  doHatch(15, 1300, 500, _width, _height);
-  doHatch(16, 1400, 500, _width, _height);
-  doHatch(17, 1500, 500, _width, _height);
-  doHatch(18, 1600, 500, _width, _height);
-  doHatch(19, 1700, 500, _width, _height);
-  doHatch(20, 1800, 500, _width, _height);
-  doHatch(21, 300, 600, _width, _height);
-  doHatch(22, 400, 600, _width, _height);
-  doHatch(23, 500, 600, _width, _height);
-  doHatch(24, 600, 600, _width, _height);
+  doHatch(15, 1100, 200, _width, _height);
+  doHatch(16, 1300, 200, _width, _height);
+  doHatch(17, 1500, 200, _width, _height);
+  doHatch(18, 1700, 200, _width, _height);
+  doHatch(19, 500, 300, _width, _height);
+  doHatch(20, 700, 300, _width, _height);
+  doHatch(21, 900, 300, _width, _height);
+  doHatch(22, 1100, 300, _width, _height);
+  doHatch(23, 1300, 300, _width, _height);
+  doHatch(24, 900, 400, _width, _height);
   
   updateSparkelsAndMagic();
   drawSparkelsAndMagic();
