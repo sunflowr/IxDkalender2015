@@ -24,6 +24,7 @@ float growth = 1;
 boolean snowB = false;
 //Moon image
 PImage moon;
+PImage halfMoon;
 
 // smoke variables 
 int m2;
@@ -66,6 +67,7 @@ void setup()
   backGroundImage = loadImage("background.png");
   santa = loadImage("santa.png");
   moon =   loadImage("moon.png");
+  halfMoon = loadImage("halfMoon.png");
   snowman1 = loadImage("snowman1.2.png");
   snowman2 = loadImage("snowman2.1.png");
   santawithreindeers = loadImage("santawithreindeers.png");
@@ -75,6 +77,8 @@ void setup()
   polarbear = loadImage("polarbearwalk.png");
   bloodsplatter = loadImage("bloodsplatter.png");
   godjul = loadImage("godjul.png");
+  lucia = loadImage("luciacrowd.png");
+  santa2 = loadImage("santa2.png");
 }
 
 
@@ -135,7 +139,7 @@ void draw()
   day13();
   day14();
   day15();
-  santaWalking(); //day16
+  day16(); //day16
   day17();
   day18();
   day19();
