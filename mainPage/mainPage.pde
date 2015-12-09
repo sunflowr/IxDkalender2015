@@ -1,5 +1,7 @@
 boolean doAttractionMode = false;
 
+PImage sky;
+
 PImage backGroundImage;
 int rainColor = 255;
 int numOfDrops = 100;
@@ -74,11 +76,14 @@ boolean[] hatchOpen = {
 
 void setup()
 {
-  size(1920, 1080, P2D);
+
+ size(1920, 1080, P2D);
+ // size(1080, 720, P2D);
   skier = loadImage("skid-tomte.png");
   backGroundImage = loadImage("background.png");
   santa = loadImage("santa.png");
   moon =   loadImage("moon.png");
+  sky = loadImage("starfield.jpg");
   halfMoon = loadImage("halfMoon.png");
   snowman1 = loadImage("snowman1.2.png");
   snowman2 = loadImage("snowman2.1.png");
@@ -111,6 +116,18 @@ void draw()
 {
   timer = millis();
   m2 = millis();
+ 
+if(d>20) //Detta är för lucka 20. Den måste ligga här för att ritas i bakgrunden.
+{
+    day20();
+    if(d>5)
+{
+    tint(255, 200);
+   image(sky, 0, 0, width, 600);
+    noTint();
+}
+     day20();
+}
   image(backGroundImage, 0, 0, width, height);
   day3();
   day11();
@@ -139,11 +156,8 @@ void draw()
       canOpenHatch[i] = true;
     }
   }
-
-  tint(255, 150);
-  noTint();
+  
   noStroke();
-
 
   // Stjärnor
   _createStars();
@@ -183,7 +197,6 @@ void draw()
   day17();
   day18();
   day19();
-  day20();
   day21();
   day22();
 
@@ -275,7 +288,6 @@ void draw()
   updateSparkelsAndMagic();
   drawSparkelsAndMagic();
 
-  smooth();
 
   // Reset mouse.
   mouseIsClicked = false;
