@@ -118,6 +118,7 @@ void draw()
   // Stjärnor
   _createStars();
   //day 1
+  day20();
   day1();
   day2();
  
@@ -153,7 +154,6 @@ void draw()
   day17();
   day18();
   day19();
-  day20();
   day21();
   day22();
   
