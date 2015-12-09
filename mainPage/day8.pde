@@ -1,5 +1,4 @@
 boolean isDay8Initialized = false;
-boolean isDay8Open = true;
 
 PImage lanternImage;
 int lanternsPosX[] = {
@@ -66,7 +65,7 @@ void day8()
   {
     // Calculate strength of fire for the lantern.
     float lanternStrength = 0.0f;
-    if(isDay8Open)
+    if(isHatchOpen(8))
     {
       lanternStrength = lanternsStrength[i] + random(-0.03, 0.03);
 
