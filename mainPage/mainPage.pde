@@ -126,7 +126,7 @@ void draw()
   if(isHatchOpen(5))
   {
     roofy = true;
-    image(roofSnow,893,277,294,174);
+    image(roofSnow,895,290,294,174);
     day5();
   }
   day5();
