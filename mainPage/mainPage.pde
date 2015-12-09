@@ -112,13 +112,13 @@ void draw()
   if(isHatchOpen(9))
   {
     treeDec = true;
-    image(treeDecorImg, 400, 800, 148, 248);
+    image(treeDecorImg, 555, 500, 148, 248);
     day9();
   }
-  if(isHatchOpen(9))
+  if(isHatchOpen(10))
   {
     houseDec = true;
-    image(houseLightsImg, 600, 800, 281, 126);
+    image(houseLightsImg, 903, 345, 281, 126);
     day10();
   }
   day11();
