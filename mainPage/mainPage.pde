@@ -80,6 +80,7 @@ void setup()
   lucia = loadImage("luciacrowd.png");
   santa2 = loadImage("santa2.png");
   renar = loadImage("renar.png");
+  initSparkelsAndMagic();
 }
 
 
@@ -229,6 +230,9 @@ void draw()
   doHatch(22, 400, 600, _width, _height);
   doHatch(23, 500, 600, _width, _height);
   doHatch(24, 600, 600, _width, _height);
+  
+  updateSparkelsAndMagic();
+  drawSparkelsAndMagic();
 
   smooth();
 
@@ -254,6 +258,7 @@ boolean doHatch(int hatchNumber, int x, int y, int _width, int _height)
   boolean openHatch = /*canOpenHatch[hatchNumber - 1] &&*/ mouseIsClicked && grid(x, y, _width, _height); 
   if(openHatch)
   {
+    createSparkelsAndMagic(x + (_width / 2), y + (_height / 2), 50);
     hatchOpen[hatchNumber - 1] = true;
   }
   return openHatch;
