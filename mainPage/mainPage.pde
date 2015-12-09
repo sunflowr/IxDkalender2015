@@ -236,6 +236,12 @@ void draw()
 // Draw the hatch and check if mouse clicked on it.
 boolean doHatch(int hatchNumber, int x, int y, int _width, int _height)
 {
+  // If hatch is open hide hatch.
+  if(hatchOpen[hatchNumber - 1])
+  {
+    return false;
+  }
+
   fill(255);
   text(hatchNumber, x + (_width / 2), y + (_height / 2));
   stroke(255);
