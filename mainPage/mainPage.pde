@@ -36,8 +36,10 @@ boolean open = false; //Open hatch or
 
 boolean treeDec = false;
 boolean houseDec = false;
+boolean roofy = false;
 PImage treeDecorImg;
 PImage houseLightsImg;
+PImage roofSnow;
 
 // Mouse variables.
 boolean mouseIsClicked = false;
@@ -69,6 +71,7 @@ void setup()
   santawithreindeers = loadImage("santawithreindeers.png");
   treeDecorImg = loadImage("treeDecor.png");
   houseLightsImg = loadImage("House-lights.png");
+  roofSnow = loadImage("houseSnow.png");
   polarbear = loadImage("polarbearwalk.png");
   bloodsplatter = loadImage("bloodsplatter.png");
   godjul = loadImage("godjul.png");
@@ -105,6 +108,12 @@ void draw()
   day2();
   day3();
   day4();
+  if(isHatchOpen(5))
+  {
+    roofy = true;
+    image(roofSnow,893,277,294,174);
+    day5();
+  }
   day5();
   day6();
   day7();
@@ -112,13 +121,13 @@ void draw()
   if(isHatchOpen(9))
   {
     treeDec = true;
-    image(treeDecorImg, 400, 800, 148, 248);
+    image(treeDecorImg, 555, 500, 148, 248);
     day9();
   }
-  if(isHatchOpen(9))
+  if(isHatchOpen(10))
   {
     houseDec = true;
-    image(houseLightsImg, 600, 800, 281, 126);
+    image(houseLightsImg, 903, 345, 281, 126);
     day10();
   }
   day11();
@@ -133,7 +142,9 @@ void draw()
   day20();
   day21();
   day22();
-  day23();
+  if(isHatchOpen(23)){
+    day23();
+  }
   if(isHatchOpen(24))
   {
     day24();
