@@ -1,18 +1,17 @@
-PImage polarbear;
-PImage bloodsplatter;
-int xPosBear = 1800;
-int yPosBear = 675;
+PImage santa2;
+int xPossanta2 = 1800;
+int yPossanta2 = 875;
 
 void day18() {
-    image(polarbear,xPosBear, yPosBear,700,402);
-    xPosBear = xPosBear-2;
-    yPosBear = yPosBear-1;
-    if(yPosBear < 670) {
-      yPosBear = yPosBear+15;
+    image(santa2,xPossanta2, yPossanta2,200,200);
+        xPossanta2 = xPossanta2-2;
+    yPossanta2 = yPossanta2-1;
+    if(yPossanta2 < 870) {
+      yPossanta2 = yPossanta2+15;
     }
-    if(xPosBear <= 850) {
-      image(bloodsplatter,800, 800 ,300,278);
+    if(xPossanta2 < 870) {
+      xPossanta2 = 870;
+      yPossanta2 = 875;
     }
     
-    
-    }
+}
