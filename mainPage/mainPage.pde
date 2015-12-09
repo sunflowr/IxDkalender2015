@@ -24,6 +24,7 @@ float growth = 1;
 boolean snowB = false;
 //Moon image
 PImage moon;
+PImage halfMoon;
 
 // smoke variables 
 int m2;
@@ -66,6 +67,7 @@ void setup()
   backGroundImage = loadImage("background.png");
   santa = loadImage("santa.png");
   moon =   loadImage("moon.png");
+  halfMoon = loadImage("halfMoon.png");
   snowman1 = loadImage("snowman1.2.png");
   snowman2 = loadImage("snowman2.1.png");
   santawithreindeers = loadImage("santawithreindeers.png");
