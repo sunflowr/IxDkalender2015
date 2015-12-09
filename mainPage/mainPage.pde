@@ -89,7 +89,12 @@ void draw()
   timer = millis();
   m2 = millis();
   image(backGroundImage, 0, 0, width, height);
-  moon();
+   day3();
+   day11();
+   if(isHatchOpen(23)){
+    day23();
+  }
+  
 
   Date(/*8*/); //Lägg ALLA luckor inom denna
   if (open == true) {
@@ -112,7 +117,7 @@ void draw()
   //day 1
   day1();
   day2();
-  day3();
+ 
   day4();
   if(isHatchOpen(5))
   {
@@ -136,7 +141,7 @@ void draw()
     image(houseLightsImg, 903, 345, 281, 126);
     day10();
   }
-  day11();
+  
   day12();
   day13();
   day14();
@@ -148,9 +153,7 @@ void draw()
   day20();
   day21();
   day22();
-  if(isHatchOpen(23)){
-    day23();
-  }
+  
   if(isHatchOpen(24))
   {
     day24();
