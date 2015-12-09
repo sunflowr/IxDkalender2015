@@ -1,3 +1,6 @@
 void day20(){
-  // Stjärnor i granarna som blinkar till.
+  if(isHatchOpen(20))
+  {
+    image(snow, 0, 0, width, height);
+  }
 }
